@@ -4,19 +4,38 @@ public class Principal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numeroAdivinar = 25;
+        int vidas = 5;
         
         System.out.println("¡Bienvenido al juego de adivina el numero!");
-        System.out.print("Introduce tu suposicion: ");
-        int suposicion = scanner.nextInt();
+        while (vidas > 0) {
+            System.out.printf("Tienes %d %s. Introduce tu suposicion: ", vidas, (vidas == 1) ? "vida" : "vidas");
+            int suposicion = scanner.nextInt();
+            
+            if (suposicion == numeroAdivinar) {
+                String premio = determinarPremio(vidas);
+                System.out.println("Has adivinado el numero y ganaste un " + premio + "!");
+                break;
+            } else {
+                System.out.println("Incorrecto. El número no es " + suposicion + ".");
+                vidas--;
+            }
+        }
         
-        if (suposicion == numeroAdivinar) {
-            String premio = "EL PREMIO";
-            System.out.println("¡Bien! ¡Has adivinado el número y ganaste un " + premio + "!");
-        } else {
-            System.out.println("Lo siento, no adivinaste el numero.");
+        if (vidas == 0) {
+            System.out.println("Se te acabaron las vidas. - Sigue intentando.");
         }
         
         scanner.close();
+    }
+    
+    public static String determinarPremio(int vidas) {
+        if (vidas >= 4) {
+            return "Gran premio";
+        } else if (vidas >= 2) {
+            return "Premio mediano";
+        } else {
+            return "Pequeño premio";
+        }
     }
 }
 
