@@ -1,12 +1,41 @@
-public class Suma_de_Numeros_Pares {
+import java.util.Scanner;
+
+public class Principal {
     public static void main(String[] args) {
-        int limite = 20;
-        int suma = 0;
-
-        for (int i = 2; i <= limite; i += 2) {
-            suma += i;
+        Scanner scanner = new Scanner(System.in);
+        int numeroAdivinar = 25;
+        int vidas = 5;
+        
+        System.out.println("¡Bienvenido al juego!");
+        
+        while (vidas > 0) {
+            System.out.printf("Tienes %d %s. Introduce tu suposición: ", vidas, (vidas == 1) ? "vida" : "vidas");
+            int suposicion = scanner.nextInt();
+            
+            if (suposicion == numeroAdivinar) {
+                String premio = determinarPremio(vidas);
+                System.out.println("¡Has adivinado el número y ganaste un " + premio + "!");
+                break;
+            } else {
+                System.out.println("Incorrecto. El número no es " + suposicion + ".");
+                vidas--;
+            }
         }
-
-        System.out.println("La suma de los números pares hasta " + limite + " es: " + suma);
+        
+        if (vidas == 0) {
+            System.out.println("¡Se te acabaron las vidas! Intenta de nuevo.");
+        }
+        
+        scanner.close();
+    }
+    
+    public static String determinarPremio(int vidas) {
+        if (vidas >= 4) {
+            return "Premio mayor";
+        } else if (vidas >= 2) {
+            return "Premio mediano";
+        } else {
+            return "Premio menor";
+        }
     }
 }
