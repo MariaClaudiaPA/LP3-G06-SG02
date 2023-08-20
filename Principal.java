@@ -8,7 +8,7 @@ public class Principal {
         
         System.out.println("¡Bienvenido al juego de adivina el numero!");
         while (vidas > 0) {
-            System.out.printf("Tienes %d %s. Introduce tu suposicion: ", vidas, (vidas == 1) ? "vida" : "vidas");
+            System.out.printf("Tienes %d %s. Ingresa el numero que supones: ", vidas, (vidas == 1) ? "vida" : "vidas");
             int suposicion = scanner.nextInt();
             
             if (suposicion == numeroAdivinar) {
