@@ -9,15 +9,15 @@ public class Principal {
         System.out.println("¡Bienvenido al juego!");
         
         while (vidas > 0) {
-            System.out.printf("Tienes %d %s. Introduce tu suposición: ", vidas, (vidas == 1) ? "vida" : "vidas");
+            System.out.printf("Tienes %d %s. Introduce tu suposicion: ", vidas, (vidas == 1) ? "vida" : "vidas");
             int suposicion = scanner.nextInt();
             
             if (suposicion == numeroAdivinar) {
                 String premio = determinarPremio(vidas);
-                System.out.println("¡Has adivinado el número y ganaste un " + premio + "!");
+                System.out.println("¡Has adivinado el numero y ganaste " + premio + "!");
                 break;
             } else {
-                System.out.println("Incorrecto. El número no es " + suposicion + ".");
+                System.out.println("Incorrecto. El numero no es " + suposicion );
                 vidas--;
             }
         }
