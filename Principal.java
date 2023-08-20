@@ -22,7 +22,7 @@ public class Principal {
         }
         
         if (vidas == 0) {
-            System.out.println("Se te acabaron las vidas. - Sigue intentando.");
+            System.out.println("Se te acabaron las vidas. Vuelve a intentar.");
         }
         
         scanner.close();
