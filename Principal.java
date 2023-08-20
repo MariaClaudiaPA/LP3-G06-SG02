@@ -16,7 +16,7 @@ public class Principal {
                 System.out.println("Has adivinado el numero y ganaste un " + premio + "!");
                 break;
             } else {
-                System.out.println("Incorrecto. El número no es " + suposicion + ".");
+                System.out.println("Incorrecto. El numero no es " + suposicion + ".");
                 vidas--;
             }
         }
@@ -30,7 +30,7 @@ public class Principal {
     
     public static String determinarPremio(int vidas) {
         if (vidas >= 4) {
-            return "Gran premio";
+            return "Premio Grande";
         } else if (vidas >= 2) {
             return "Premio mediano";
         } else {
@@ -38,4 +38,3 @@ public class Principal {
         }
     }
 }
-
