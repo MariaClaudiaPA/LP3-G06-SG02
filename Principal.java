@@ -31,11 +31,11 @@ public class Principal {
     
     public static String determinarPremio(int vidas) {
         if (vidas >= 4) {
-            return "Premio mayor";
+            return "Recibes un premio mayor";
         } else if (vidas >= 2) {
-            return "Premio mediano";
+            return "Recibes un premio mayor";
         } else {
-            return "Premio menor";
+            return "Recibes un premio mayor;
         }
     }
 }
